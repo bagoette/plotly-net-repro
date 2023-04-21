@@ -19,18 +19,6 @@ internal class Program
         }
     }
 
-    private static void RunVideoConverter()
-    {
-        var filenames = new[] { "PokerCoaching-1.mp4", "PokerCoaching-2.mp4" };
-
-        var mpg = new FFMpegConverter();
-        var settings = new ConcatSettings();
-
-        mpg.ConcatMedia(filenames, "Combined.mp4", Format.mp4, settings);
-
-        var a = 1;
-    }
-
     private static void RunPlotlyTests()
     {
         var combined = trace1.Concat(trace2);
@@ -76,8 +64,6 @@ internal class Program
 
         Plotly.NET.Chart
             .Combine(new[] { tempChart, tankChart })
-            //.SingleStack<IEnumerable<GenericChart.GenericChart>>(Pattern: StyleParam.LayoutGridPattern.Coupled)
-            //.Invoke(new[] { tempChart, tankChart })
             .WithShape(topRect)
             .WithShape(botRect)
             .WithYAxisStyle<double, double, string>("Voltage")
