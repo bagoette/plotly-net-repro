@@ -57,10 +57,10 @@ internal class Program
             Y1: min - buffer);
 
         var tempChart = Plotly.NET.CSharp.Chart
-            .Line<DateTime, double, string>(dates, trace1, Name: "Temperature", ShowLegend: false);
+            .Line<DateTime, double, string>(dates, trace1, Name: "Tank1 Voltage", ShowLegend: false);
 
         var tankChart = Plotly.NET.CSharp.Chart
-            .Line<DateTime, double, string>(dates, trace2, Name: "Tank Voltage", ShowLegend: false);
+            .Line<DateTime, double, string>(dates, trace2, Name: "Tank2 Voltage", ShowLegend: false);
 
         Plotly.NET.Chart
             .Combine(new[] { tempChart, tankChart })
